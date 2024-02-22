@@ -17,7 +17,9 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->unsignedInteger('usertype')->default(0); // Use unsignedInteger for non-negative values
+            $table->unsignedInteger('usertype')->default(0);
+            $table->unsignedInteger('approved')->default(0);
+            $table->unsignedInteger('role')->default(0); // Use unsignedInteger for non-negative values
             $table->rememberToken();
             $table->timestamps();
         });
